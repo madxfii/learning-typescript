@@ -25,7 +25,12 @@ _(diisi saat belajar)_
 
 ## Hari 4
 
-_(diisi saat belajar)_
+- **Cek paham materi 1 (`ruang()`):** urutan output `typeof` tertukar, dan sempat menulis nama variabel (`isiRuang`) sebagai output. Kenapa: kurang teliti trace. Tulis baris yang jalan, nama yang dicek, isinya di tabel setup, baru outputnya.
+- **Snippet 1:** benar, tidak ada salah paham. Tapi sempat tertukar nama (`greet` vs `greet2`) di Snippet 2, jadi tulis nama persis dari kode.
+- **Cek paham materi 2 (`toko()` dan Snippet 2):** error memanggil `var diskon` sebelum barisnya dikira `ReferenceError: diskon is not defined`. Sebenarnya `TypeError: diskon is not a function`, karena `diskon` terdaftar dan berisi `undefined` (nilai), jadi nama ketemu tapi nilainya bukan fungsi.
+- **Cek paham materi 2 (versi `const`):** dikira error-nya sama persis dengan versi `var` (`is not a function`), lalu dikira `ReferenceError: diskon is not defined`. Sebenarnya `ReferenceError: Cannot access 'diskon' before initialization`, karena `const` berstatus TDZ dan membaca namanya sudah gagal sebelum sempat memanggil. Jenis dan pesan keduanya berubah dibanding `var`. Pesan `not defined` vs `Cannot access` salah untuk ketiga kalinya (Hari 2 dua kali, Hari 4 sekali): selalu verifikasi pesan error di Node sebelum menjawab.
+- **Cek paham materi 3 (`lab()` dan Snippet 4):** `class` dikira diisi seperti function declaration (`function E`), lalu dikira mirip `const` dan `var`. Sebenarnya class di-hoist seperti `let`/`const`: terdaftar tapi TDZ sampai barisnya dieksekusi, jadi `new Person()` sebelum `class Person {}` adalah `ReferenceError: Cannot access 'Person' before initialization`.
+- **Snippet 5 (`foo` bentrok `var` dan function):** baris 1 sempat dijawab `undefined` dan baris 4 sempat `function`. Sebenarnya function declaration mengisi `foo` di tahap setup, jadi `typeof foo` baris 1 = `function`, lalu `var foo = "value"` menimpa isinya saat eksekusi, jadi baris 4 = `string`. Trace sempat bertentangan dengan tabel setup sendiri (setup `foo` = fungsi, tapi baris 1 ditulis `undefined`). Kenapa: lupa isi variabel di suatu baris = isi terakhir yang dituliskan baris sebelumnya, dan urutan pengisian antara setup vs eksekusi.
 
 ## Hari 5
 

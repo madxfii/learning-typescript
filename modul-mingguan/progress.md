@@ -6,7 +6,7 @@ Terakhir update: 2026-11-04
 
 - Fase: Fase 0 (minggu 1-3)
 - Minggu: 1
-- Hari: 3 (selesai)
+- Hari: 4 (selesai)
 
 ## Gerbang tercapai
 
@@ -23,7 +23,8 @@ Terakhir update: 2026-11-04
 
 ## Bottleneck / catatan pola
 
-_(diisi kalau ada pola berulang dari log-salah-paham beberapa minggu)_
+- Pesan error TDZ (`Cannot access 'x' before initialization`) sering ketuker dengan `x is not defined` (3 kali di minggu 1, Hari 2 dan Hari 4). Pembeda: nama ketemu di scope tapi TDZ vs nama tidak ketemu sama sekali. Verifikasi pesan di Node, bukan Python Tutor.
+- Ketelitian trace: urutan output tertukar, nama variabel salah ketik, isi variabel di suatu baris tidak konsisten dengan baris sebelumnya.
 
 ## Riwayat sesi
 
@@ -31,3 +32,4 @@ _(diisi kalau ada pola berulang dari log-salah-paham beberapa minggu)_
 - 2026-11-03: Minggu 1 Hari 1 selesai (primitif vs objek, copy vs reference). Semua 5 snippet ditebak benar tanpa salah paham.
 - 2026-11-04: Minggu 1 Hari 2 selesai (var/let/const, redeclare, `const` binding vs isi, TDZ). Salah paham dicatat di log: `let` redeclare dikira assignment, reassign `const` dikira parse error, pesan TDZ dikira `not defined`. Urutan tahap (parse, setup scope, eksekusi) sudah dipahami.
 - 2026-11-04: Minggu 1 Hari 3 selesai (var hidup di fungsi vs let/const di blok, shadowing, deklarasi vs assignment). Salah paham dicatat di log: `var` dikira masuk scope `if`, hedging `error/undefined` untuk `let`, notasi trace kondisi loop. 5 snippet ditebak benar.
+- 2026-11-04: Minggu 1 Hari 4 selesai (hoisting: function declaration vs function expression/arrow, `var` undefined vs `let`/`const`/`class` TDZ, nama bentrok `var`/function). Salah paham dicatat di log: pesan `not defined` vs `Cannot access` (kali ketiga), `class` dikira seperti function/`var`, urutan setup vs eksekusi di Snippet 5.
