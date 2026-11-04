@@ -17,7 +17,11 @@ _(diisi saat belajar)_
 
 ## Hari 3
 
-_(diisi saat belajar)_
+- **Pertanyaan pengecek (padanan Snippet 1):** `var nama` di dalam `if` dikira "di dalam scope `if`". Sebenarnya `var` tidak pernah masuk scope `if`, dia didaftarkan di scope fungsi sejak fungsi dimulai (isi awal `undefined`). Makanya bisa dibaca di luar `if`.
+- **Pertanyaan pengecek (padanan Snippet 2):** menjawab ragu `error/undefined` untuk `let` di dalam `if` yang dibaca di luar. Sebenarnya pasti error (`ReferenceError: nama is not defined`), karena `let` didaftarkan di scope blok dan tidak ada di rantai pencarian dari luar `if`. `undefined` itu perilaku `var`. Alasan "shadowing" juga salah konteks, karena cuma ada satu variabel `nama`.
+- **Snippet 3 (trace loop):** menulis kondisi loop sebagai `3 > 3`, padahal kodenya `i < 3` (jadi `3 < 3` = false). Hasil akhirnya sama, tapi tulis kondisi persis seperti di kode saat trace.
+- **Snippet 3 (scope `var`):** mengira `var` "bisa diakses di scope manapun". Sebenarnya `var` bisa diakses di seluruh fungsi tempat dia didaftarkan (atau seluruh skrip kalau global). Di snippet ini kebetulan global karena tidak ada fungsi.
+- **Materi 2 (deklarasi vs assignment):** `let level = "x"` itu deklarasi baru, `level = "x"` itu assignment ke variabel yang ditemukan di rantai pencarian. Tanpa deklarasi di scope dalam, assignment mengubah variabel luar. Tanpa deklarasi di mana pun: strict mode `ReferenceError`, sloppy mode bikin global baru.
 
 ## Hari 4
 
