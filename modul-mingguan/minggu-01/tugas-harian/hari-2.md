@@ -77,5 +77,5 @@ let b = 1;
 
 ## Checklist
 
-- [ ] Semua snippet ditebak dulu sebelum dijalankan
-- [ ] Semua selisih tebakan (kalau ada) sudah dicatat di log salah paham
+- [x] Semua snippet ditebak dulu sebelum dijalankan
+- [x] Semua selisih tebakan (kalau ada) sudah dicatat di log salah paham

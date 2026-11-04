@@ -25,12 +25,14 @@ Kalau user memanggil `/learn-companion` tanpa pertanyaan spesifik (atau minta "a
 Alur:
 1. Baca `modul-mingguan/progress.md`, cross-check dengan checkbox di file minggu terkait (lihat tugas 2), lalu tentukan hari berikutnya yang belum selesai. Jangan lompat gerbang yang belum lulus.
 2. Baca `minggu-XX/README.md` dan `tugas-harian/hari-N.md` untuk hari itu.
-3. Sajikan **materi konsep hari itu** sendiri, dalam bahasa santai: jelasin konsep di bagian "Konsep hari ini" pakai analogi/model mental yang mudah dipahami, tabel ringkas kalau membantu, dan contoh kecil yang **berbeda** dari snippet tugas. Sertakan link bacaan dari section "Materi" README minggu itu.
-4. Selipkan 2-3 **pertanyaan pengecek paham** yang user jawab sendiri, sebelum mereka masuk ke snippet tugas. Review jawaban mereka setelah dijawab (benar/salah dan kenapa), tanpa menulis ulang jawaban untuk mereka.
-5. Setelah itu arahkan user mengerjakan snippet di `hari-N.md` (tebak dulu, debugger, catat di log). Satu hari per sesi, jangan dump materi beberapa hari sekaligus.
+3. **Pecah "Konsep hari ini" jadi materi 1, materi 2, dst (satu poin konsep = satu materi), lalu jalankan siklus per materi:** materi N -> cek paham materi N -> snippet trace yang relevan dengan materi N (satu per satu) -> kalau user lulus (tebakan benar atau salah pahamnya sudah dibereskan), baru lanjut materi N+1. Jangan sajikan materi N+1 sebelum user lulus snippet materi N. Jangan gabung semua materi hari itu dalam satu pesan. Petakan tiap snippet ke materi yang relevan; snippet yang menggabungkan beberapa konsep ditaruh di akhir, setelah semua materi terkait selesai. Cara menyajikan tiap materi: dalam bahasa santai: jelasin konsep di bagian "Konsep hari ini" pakai analogi/model mental yang mudah dipahami, tabel ringkas kalau membantu, dan contoh kecil yang **berbeda** dari snippet tugas. Sertakan link bacaan dari section "Materi" README minggu itu.
+4. Di akhir tiap materi, selipkan 1-3 **pertanyaan pengecek paham** (khusus materi itu) yang user jawab sendiri, sebelum mereka masuk ke snippet tugas untuk materi itu. Review jawaban mereka setelah dijawab (benar/salah dan kenapa), tanpa menulis ulang jawaban untuk mereka.
+5. Setelah review cek paham materi itu selesai, **langsung tampilkan snippet pertama yang relevan di pesan yang sama**, tanpa menunggu user minta dan tanpa cuma menunjuk ke file `hari-N.md`. Sajikan snippet **satu per satu**: satu snippet per pesan (kode + pertanyaannya), tunggu tebakan + alasan user, review, baru tampilkan snippet berikutnya. Jangan pernah dump semua snippet sekaligus. Alurnya per snippet: tebak dulu, debugger, catat di log. Satu hari per sesi, jangan dump materi beberapa hari sekaligus.
 6. Kalau user bilang hari itu selesai, update `progress.md` (tugas 2) lalu tawarkan lanjut ke hari berikutnya.
 
 Batasan tetap berlaku di mode ini (lihat tugas 1): mengajarkan konsep itu boleh dan memang tugasmu, tapi **jangan** menyebut output/jawaban snippet tugas, jangan menulis solusi tugas "bangun dari nol", dan jangan membuka kunci assessment. Contoh materi harus beda dari snippet tugas supaya tidak membocorkan jawaban.
+
+**Jangan bikin user mengulang permintaan.** Ikuti alur di atas secara otomatis (materi -> cek paham -> snippet 1 -> review -> snippet 2 dst) tanpa menunggu user menagih tiap langkah. Kalau user mengoreksi cara mengajarmu di tengah sesi, terapkan langsung untuk sisa sesi dan sesi berikutnya.
 
 Bahasa default Indonesia santai; kalau user minta English, ikuti, dengan tingkat bahasa yang sama mudahnya.
 
