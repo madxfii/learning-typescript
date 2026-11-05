@@ -1,12 +1,12 @@
 # Progress Belajar
 
-Terakhir update: 2026-11-05
+Terakhir update: 2026-11-06
 
 ## Status saat ini
 
 - Fase: Fase 0 (minggu 1-3)
 - Minggu: 2
-- Hari: 2 (selesai), lanjut Hari 3
+- Hari: 3 (selesai), lanjut Hari 4
 
 ## Gerbang tercapai
 
@@ -39,3 +39,4 @@ Terakhir update: 2026-11-05
 - 2026-11-04: Minggu 1 Hari 5 selesai (review campuran: mutate vs reassign, spread copy, hoisting/scope blok, TDZ + shadowing, parameter fungsi). Slip: urutan output tertukar (Snippet 1), `typeof` pada nama tak terdeklarasi dikira error, `not defined` vs TDZ tertukar lagi (kali keempat, pada pertanyaan cek paham), alasan Snippet 4 dikira karena `return` padahal karena reassign parameter. Semua 5 snippet akhirnya benar.
 - 2026-11-05: Minggu 2 Hari 1 selesai (call stack: push/pop frame, frame `global`, parameter di "laci" tiap frame, stack unwinding saat `throw`). Slip: `console.log` dikira masuk stack sebelum argumennya dihitung (Snippet 1), titik lanjut eksekusi tepat setelah pop tertukar (cek paham materi 2). Snippet 2-5 benar.
 - 2026-11-05: Minggu 2 Hari 2 selesai (rekursi, base case, kedalaman stack, pohon panggilan, mutual recursion). Slip: di fase naik rekursi, `n`/`arr[0]` frame sendiri tertukar dengan nilai return frame di dalam (`factorial`, `sumArray`), kedalaman stack salah hitung (5 vs 6, ikut `global` atau tidak), `fib(1)` dikira masih memanggil `fib(0)`, beda `countDown` vs `factorial` awalnya kabur (pekerjaan tertunda setelah rekursi kembali), `- 1` dikira mengubah nilai return padahal mengubah argumen. Semua 5 snippet akhirnya benar.
+- 2026-11-06: Minggu 2 Hari 3 selesai (closure: fungsi dalam membawa referensi ke environment tempat dibuat, environment baru per pemanggilan fungsi luar, dua fungsi dari pemanggilan yang sama berbagi environment). Semua 5 snippet ditebak benar. Catatan kecil: environment/frame sempat dikira dipegang oleh variabelnya, padahal yang memegang referensi adalah fungsinya. User minta review fokus ke konsep, tidak nitpick salah nama/notasi.
