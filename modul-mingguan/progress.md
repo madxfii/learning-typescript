@@ -1,12 +1,12 @@
 # Progress Belajar
 
-Terakhir update: 2026-11-04
+Terakhir update: 2026-11-05
 
 ## Status saat ini
 
 - Fase: Fase 0 (minggu 1-3)
-- Minggu: 1
-- Hari: 5 (selesai), Minggu 1 selesai, belum mulai Minggu 2
+- Minggu: 2
+- Hari: 2 (selesai), lanjut Hari 3
 
 ## Gerbang tercapai
 
@@ -26,6 +26,8 @@ Terakhir update: 2026-11-04
 - Pesan error TDZ (`Cannot access 'x' before initialization`) sering ketuker dengan `x is not defined` (3 kali di minggu 1, Hari 2 dan Hari 4). Pembeda: nama ketemu di scope tapi TDZ vs nama tidak ketemu sama sekali. Verifikasi pesan di Node, bukan Python Tutor. Slip ke-4 (Hari 5) terjadi saat sesi pakai English dan user bilang kesulitan memahami pertanyaan, jadi kemungkinan besar karena bahasa, bukan konsepnya. User bisa membedakan keduanya (konfirmasi sendiri, 2026-11-04).
 - User sengaja memakai English di sebagian sesi untuk melatih membaca soal berbahasa Inggris. Kalau bahasa jadi hambatan, mulai dengan pertanyaan English yang pendek dan jelas.
 - Ketelitian trace: urutan output tertukar, nama variabel salah ketik, isi variabel di suatu baris tidak konsisten dengan baris sebelumnya.
+- Minggu 2 (rekursi): pola berulang, parameter/laci frame sendiri tertukar dengan nilai return frame di dalam saat menulis fase naik. Kalau muncul lagi di hari berikutnya, kasih latihan pisah kolom `n` dan kolom return.
+- Preferensi user: tabel stack per frame terasa terlalu panjang untuk rekursi bercabang, pohon panggilan lebih nyaman. Kalau kode lain disebut, tampilkan kodenya.
 
 ## Riwayat sesi
 
@@ -35,3 +37,5 @@ Terakhir update: 2026-11-04
 - 2026-11-04: Minggu 1 Hari 3 selesai (var hidup di fungsi vs let/const di blok, shadowing, deklarasi vs assignment). Salah paham dicatat di log: `var` dikira masuk scope `if`, hedging `error/undefined` untuk `let`, notasi trace kondisi loop. 5 snippet ditebak benar.
 - 2026-11-04: Minggu 1 Hari 4 selesai (hoisting: function declaration vs function expression/arrow, `var` undefined vs `let`/`const`/`class` TDZ, nama bentrok `var`/function). Salah paham dicatat di log: pesan `not defined` vs `Cannot access` (kali ketiga), `class` dikira seperti function/`var`, urutan setup vs eksekusi di Snippet 5.
 - 2026-11-04: Minggu 1 Hari 5 selesai (review campuran: mutate vs reassign, spread copy, hoisting/scope blok, TDZ + shadowing, parameter fungsi). Slip: urutan output tertukar (Snippet 1), `typeof` pada nama tak terdeklarasi dikira error, `not defined` vs TDZ tertukar lagi (kali keempat, pada pertanyaan cek paham), alasan Snippet 4 dikira karena `return` padahal karena reassign parameter. Semua 5 snippet akhirnya benar.
+- 2026-11-05: Minggu 2 Hari 1 selesai (call stack: push/pop frame, frame `global`, parameter di "laci" tiap frame, stack unwinding saat `throw`). Slip: `console.log` dikira masuk stack sebelum argumennya dihitung (Snippet 1), titik lanjut eksekusi tepat setelah pop tertukar (cek paham materi 2). Snippet 2-5 benar.
+- 2026-11-05: Minggu 2 Hari 2 selesai (rekursi, base case, kedalaman stack, pohon panggilan, mutual recursion). Slip: di fase naik rekursi, `n`/`arr[0]` frame sendiri tertukar dengan nilai return frame di dalam (`factorial`, `sumArray`), kedalaman stack salah hitung (5 vs 6, ikut `global` atau tidak), `fib(1)` dikira masih memanggil `fib(0)`, beda `countDown` vs `factorial` awalnya kabur (pekerjaan tertunda setelah rekursi kembali), `- 1` dikira mengubah nilai return padahal mengubah argumen. Semua 5 snippet akhirnya benar.
