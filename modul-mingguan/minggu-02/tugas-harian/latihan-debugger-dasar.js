@@ -1,12 +1,15 @@
-function kali(a, b) {
-  const hasil = a * b;
-  return hasil;
+function makeDepthTracker() {
+  let maxDepth = 0;
+
+  function recurse(n, depth = 0) {
+    maxDepth = Math.max(maxDepth, depth);
+    if (n <= 0) return;
+    recurse(n - 1, depth + 1);
+  }
+
+  return { recurse, getMaxDepth: () => maxDepth };
 }
 
-function hitungLuas(panjang, lebar) {
-  const luas = kali(panjang, lebar);
-  return luas;
-}
-
-const total = hitungLuas(3, 4);
-console.log(total);
+const tracker = makeDepthTracker();
+tracker.recurse(3);
+console.log(tracker.getMaxDepth());
