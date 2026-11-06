@@ -6,7 +6,7 @@ Terakhir update: 2026-11-06
 
 - Fase: Fase 0 (minggu 1-3)
 - Minggu: 2
-- Hari: 3 (selesai), lanjut Hari 4
+- Hari: 4 (selesai), lanjut Hari 5
 
 ## Gerbang tercapai
 
@@ -40,3 +40,4 @@ Terakhir update: 2026-11-06
 - 2026-11-05: Minggu 2 Hari 1 selesai (call stack: push/pop frame, frame `global`, parameter di "laci" tiap frame, stack unwinding saat `throw`). Slip: `console.log` dikira masuk stack sebelum argumennya dihitung (Snippet 1), titik lanjut eksekusi tepat setelah pop tertukar (cek paham materi 2). Snippet 2-5 benar.
 - 2026-11-05: Minggu 2 Hari 2 selesai (rekursi, base case, kedalaman stack, pohon panggilan, mutual recursion). Slip: di fase naik rekursi, `n`/`arr[0]` frame sendiri tertukar dengan nilai return frame di dalam (`factorial`, `sumArray`), kedalaman stack salah hitung (5 vs 6, ikut `global` atau tidak), `fib(1)` dikira masih memanggil `fib(0)`, beda `countDown` vs `factorial` awalnya kabur (pekerjaan tertunda setelah rekursi kembali), `- 1` dikira mengubah nilai return padahal mengubah argumen. Semua 5 snippet akhirnya benar.
 - 2026-11-06: Minggu 2 Hari 3 selesai (closure: fungsi dalam membawa referensi ke environment tempat dibuat, environment baru per pemanggilan fungsi luar, dua fungsi dari pemanggilan yang sama berbagi environment). Semua 5 snippet ditebak benar. Catatan kecil: environment/frame sempat dikira dipegang oleh variabelnya, padahal yang memegang referensi adalah fungsinya. User minta review fokus ke konsep, tidak nitpick salah nama/notasi.
+- 2026-11-06: Minggu 2 Hari 4 selesai (closure dalam loop: `var` satu variabel bersama vs `let` binding baru per iterasi, IIFE, `setTimeout` baru jalan setelah stack kosong). Slip: nilai `var` setelah loop (4, bukan 3), `setTimeout(fn, 0)` dikira langsung jalan, alasan IIFE dikira "callback langsung jalan", perubahan relevan di Snippet 5 (`i`, bukan `fns`). Snippet 2 dan 4 benar. Semua 5 snippet akhirnya benar.
