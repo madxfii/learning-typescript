@@ -5,8 +5,8 @@ Terakhir update: 2026-11-06
 ## Status saat ini
 
 - Fase: Fase 0 (minggu 1-3)
-- Minggu: 2 (selesai, semua 5 hari)
-- Hari: 5 (selesai), lanjut Minggu 3 Hari 1
+- Minggu: 3
+- Hari: 1 (selesai), lanjut Minggu 3 Hari 2
 
 ## Gerbang tercapai
 
@@ -42,3 +42,4 @@ Terakhir update: 2026-11-06
 - 2026-11-06: Minggu 2 Hari 3 selesai (closure: fungsi dalam membawa referensi ke environment tempat dibuat, environment baru per pemanggilan fungsi luar, dua fungsi dari pemanggilan yang sama berbagi environment). Semua 5 snippet ditebak benar. Catatan kecil: environment/frame sempat dikira dipegang oleh variabelnya, padahal yang memegang referensi adalah fungsinya. User minta review fokus ke konsep, tidak nitpick salah nama/notasi.
 - 2026-11-06: Minggu 2 Hari 4 selesai (closure dalam loop: `var` satu variabel bersama vs `let` binding baru per iterasi, IIFE, `setTimeout` baru jalan setelah stack kosong). Slip: nilai `var` setelah loop (4, bukan 3), `setTimeout(fn, 0)` dikira langsung jalan, alasan IIFE dikira "callback langsung jalan", perubahan relevan di Snippet 5 (`i`, bukan `fns`). Snippet 2 dan 4 benar. Semua 5 snippet akhirnya benar.
 - 2026-11-06: Minggu 2 Hari 5 selesai (breakpoint bersyarat, watch dievaluasi di frame yang dipilih di Call Stack, review campuran call stack + rekursi + closure: depth tracker, currying, safeDivide, memoize, closure per pemanggilan build). Slip: watch parameter `n` sempat dikira bergantung pada `var`/`let`/`const` padahal tiap frame punya laci parameter sendiri, hasil `1+2+3` salah hitung jadi 5 (slip aritmatika, bukan konsep). Semua 5 snippet akhirnya benar. Minggu 2 selesai.
+- 2026-11-06: Minggu 3 Hari 1 selesai (kode sinkron baris demi baris, callback tidak otomatis asinkron, "didaftarkan sekarang, dipanggil nanti" yang masih sinkron, error-first callback, pratinjau `setTimeout`). Slip: stack saat callback jalan lupa menyertakan fungsi penerima (`map`), alasan Snippet 3 dikira "tidak pakai fungsi async" padahal soal siapa yang memanggil dan kapan, callback di `divide(10, 2, ...)` dikira tidak dipanggil (padahal dipanggil dengan `null` dan hasil), `setTimeout` dikira tidak asinkron (yang ditunda callback-nya). Catatan: contoh materi 3 terlalu mirip Snippet 3, diganti Snippet 3b (daftar dua kali, yang pertama tertimpa, benar). Snippet 1, 2, 4, 5 benar.
