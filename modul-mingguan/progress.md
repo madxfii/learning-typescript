@@ -6,7 +6,7 @@ Terakhir update: 2026-11-09
 
 - Fase: Fase 1 (minggu 4-10)
 - Minggu: 4
-- Hari: belum mulai, lanjut Minggu 4 Hari 1
+- Hari: Minggu 4 Hari 2 selesai, lanjut Minggu 4 Hari 3
 
 ## Gerbang tercapai
 
@@ -48,3 +48,5 @@ Terakhir update: 2026-11-09
 - 2026-11-09: Minggu 3 Hari 4 selesai (urutan baku event loop: sinkron -> microtask habis -> satu macrotask -> microtask lagi, `async/await`: bagian sebelum `await` pertama sinkron, sisanya microtask). Slip: pada Snippet 5, macrotask "2" ditaruh sebelum microtask "4", lalu microtask "6" (didaftarkan oleh microtask lain) ditaruh setelah macrotask "2" (pola yang sama dengan "AB"/"1a" di Hari 3). Cek paham materi 2: alasan "sinkron" untuk bagian sebelum `await` harus ditanya ulang. Snippet 1-4 benar, Snippet 5 akhirnya benar. Pola log sinkron salah posisi tidak muncul lagi berkat metode dua tahap.
 - 2026-11-09: Minggu 3 Hari 5 selesai (review gerbang Fase 0: soal 1-3 assessment + Snippet 4 sinkron/asinkron). Slip: penjelasan reassign parameter awalnya terbalik waktunya (sebelum vs sesudah `config = {...}`), beda microtask vs macrotask awalnya hanya menyebut isi antrean (Promise/`setTimeout`) bukan cara memprosesnya, `++count` prefix dikira mengembalikan nilai sebelum ditambah (0,1,0 jadi 1,2,1), nilai `counterB()` sempat salah. Gerbang Fase 0 belum dicentang, menunggu konfirmasi user.
 - 2026-11-09: Gerbang Fase 0 tercapai (user konfirmasi yakin menjawab soal 1-3 tanpa petunjuk dan bisa menjelaskan alasannya). Lanjut ke Fase 1, Minggu 4.
+- 2026-11-09: Minggu 4 Hari 1 selesai (lexical scope: pencarian nama ditentukan posisi fungsi ditulis, bukan pemanggilnya; lexical vs dynamic scope; fungsi yang dikirim ke tempat lain tetap memakai scope tempat dia ditulis). Slip: alasan cek paham 2 materi 1 dijawab "bukan lagi closure" padahal yang berubah posisi penulisan fungsi, nilai `greeting` di Snippet 2 tertukar dengan argumen `name`, output Snippet 3 menulis nama variabel `y` bukan nilainya (2). Snippet 1 dan 2 benar, Snippet 3 akhirnya benar. Catatan: kata "ketemu"/"nyari" di penjelasan materi sempat membingungkan, ganti ke "mencari deklarasi nama" dan "pencarian berhenti".
+- 2026-11-09: Minggu 4 Hari 2 selesai (module pattern: closure + objek yang di-return = state privat, IIFE, tiap pemanggilan factory membuat scope baru). Slip: alasan `saldo` tetap hidup awalnya hanya "lexical scope" (belum menyebut method yang memegang referensi), `counterModule.count` awalnya dikira tidak bisa/error padahal `undefined` (variabel vs properti objek), penjelasan alasan awalnya umum. Snippet 3 benar, Snippet 1 dan 2 output benar. Trace Snippet 2 dilewati karena user sudah paham modelnya.
