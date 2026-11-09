@@ -32,4 +32,4 @@ Semua catatan salah paham minggu ini dikumpulkan di [`log-salah-paham.md`](log-s
 
 Soal 1-3 ada di [`../assessment.md`](../assessment.md).
 
-- [ ] Gerbang tercapai
+- [x] Gerbang tercapai

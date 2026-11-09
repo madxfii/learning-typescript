@@ -1,16 +1,16 @@
 # Progress Belajar
 
-Terakhir update: 2026-11-06
+Terakhir update: 2026-11-09
 
 ## Status saat ini
 
-- Fase: Fase 0 (minggu 1-3)
-- Minggu: 3
-- Hari: 1 (selesai), lanjut Minggu 3 Hari 2
+- Fase: Fase 1 (minggu 4-10)
+- Minggu: 4
+- Hari: belum mulai, lanjut Minggu 4 Hari 1
 
 ## Gerbang tercapai
 
-- [ ] Fase 0 (minggu 3)
+- [x] Fase 0 (minggu 3)
 - [ ] Fase 1 (minggu 10)
 - [ ] Fase 2 (minggu 16)
 - [ ] Fase 3 (minggu 24)
@@ -43,3 +43,8 @@ Terakhir update: 2026-11-06
 - 2026-11-06: Minggu 2 Hari 4 selesai (closure dalam loop: `var` satu variabel bersama vs `let` binding baru per iterasi, IIFE, `setTimeout` baru jalan setelah stack kosong). Slip: nilai `var` setelah loop (4, bukan 3), `setTimeout(fn, 0)` dikira langsung jalan, alasan IIFE dikira "callback langsung jalan", perubahan relevan di Snippet 5 (`i`, bukan `fns`). Snippet 2 dan 4 benar. Semua 5 snippet akhirnya benar.
 - 2026-11-06: Minggu 2 Hari 5 selesai (breakpoint bersyarat, watch dievaluasi di frame yang dipilih di Call Stack, review campuran call stack + rekursi + closure: depth tracker, currying, safeDivide, memoize, closure per pemanggilan build). Slip: watch parameter `n` sempat dikira bergantung pada `var`/`let`/`const` padahal tiap frame punya laci parameter sendiri, hasil `1+2+3` salah hitung jadi 5 (slip aritmatika, bukan konsep). Semua 5 snippet akhirnya benar. Minggu 2 selesai.
 - 2026-11-06: Minggu 3 Hari 1 selesai (kode sinkron baris demi baris, callback tidak otomatis asinkron, "didaftarkan sekarang, dipanggil nanti" yang masih sinkron, error-first callback, pratinjau `setTimeout`). Slip: stack saat callback jalan lupa menyertakan fungsi penerima (`map`), alasan Snippet 3 dikira "tidak pakai fungsi async" padahal soal siapa yang memanggil dan kapan, callback di `divide(10, 2, ...)` dikira tidak dipanggil (padahal dipanggil dengan `null` dan hasil), `setTimeout` dikira tidak asinkron (yang ditunda callback-nya). Catatan: contoh materi 3 terlalu mirip Snippet 3, diganti Snippet 3b (daftar dua kali, yang pertama tertimpa, benar). Snippet 1, 2, 4, 5 benar.
+- 2026-11-09: Minggu 3 Hari 2 selesai (`setTimeout` cuma mendaftarkan callback, event loop: callback masuk stack hanya kalau stack kosong, delay itu minimum dan bisa tertunda kode sinkron berat). Slip: log sinkron setelah `setTimeout` ditaruh di akhir setelah callback timer (Snippet 1 dan 3, pola sama, butuh 3-4 kali koreksi), waktu pendaftaran inner timeout dikira setelah callback outer selesai (padahal saat callback outer sedang jalan), sempat hedging "tergantung" untuk urutan dua timer. Snippet 2 dan 4 benar.
+- 2026-11-09: Minggu 3 Hari 3 selesai (Promise pending/fulfilled/rejected, `.then` mendaftarkan callback ke microtask queue, microtask habis dulu sebelum macrotask, rantai `.then` didaftarkan satu per satu, rejection diteruskan ke `.catch`). Slip: log sinkron di skrip utama ditaruh setelah callback antrean (berulang 5 kali: cek paham materi 1 dan 2, Snippet 2), argumen `v` tertukar dengan nilai return (Snippet 3), microtask baru dikira boleh menyalip microtask yang sudah antre (rantai `.then` dan Snippet 5), `.then` kedua dikira didaftarkan saat X selesai (padahal saat callback pertama di rantainya selesai). Cara yang berhasil: tulis dua tahap, log skrip utama dulu, baru isi antrean. Snippet 1, 4 benar, sisanya akhirnya benar.
+- 2026-11-09: Minggu 3 Hari 4 selesai (urutan baku event loop: sinkron -> microtask habis -> satu macrotask -> microtask lagi, `async/await`: bagian sebelum `await` pertama sinkron, sisanya microtask). Slip: pada Snippet 5, macrotask "2" ditaruh sebelum microtask "4", lalu microtask "6" (didaftarkan oleh microtask lain) ditaruh setelah macrotask "2" (pola yang sama dengan "AB"/"1a" di Hari 3). Cek paham materi 2: alasan "sinkron" untuk bagian sebelum `await` harus ditanya ulang. Snippet 1-4 benar, Snippet 5 akhirnya benar. Pola log sinkron salah posisi tidak muncul lagi berkat metode dua tahap.
+- 2026-11-09: Minggu 3 Hari 5 selesai (review gerbang Fase 0: soal 1-3 assessment + Snippet 4 sinkron/asinkron). Slip: penjelasan reassign parameter awalnya terbalik waktunya (sebelum vs sesudah `config = {...}`), beda microtask vs macrotask awalnya hanya menyebut isi antrean (Promise/`setTimeout`) bukan cara memprosesnya, `++count` prefix dikira mengembalikan nilai sebelum ditambah (0,1,0 jadi 1,2,1), nilai `counterB()` sempat salah. Gerbang Fase 0 belum dicentang, menunggu konfirmasi user.
+- 2026-11-09: Gerbang Fase 0 tercapai (user konfirmasi yakin menjawab soal 1-3 tanpa petunjuk dan bisa menjelaskan alasannya). Lanjut ke Fase 1, Minggu 4.
