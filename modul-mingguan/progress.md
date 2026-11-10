@@ -1,12 +1,12 @@
 # Progress Belajar
 
-Terakhir update: 2026-11-09
+Terakhir update: 2026-11-10
 
 ## Status saat ini
 
 - Fase: Fase 1 (minggu 4-10)
 - Minggu: 4
-- Hari: Minggu 4 Hari 2 selesai, lanjut Minggu 4 Hari 3
+- Hari: Minggu 4 Hari 4 selesai, lanjut Minggu 4 Hari 5
 
 ## Gerbang tercapai
 
@@ -50,3 +50,5 @@ Terakhir update: 2026-11-09
 - 2026-11-09: Gerbang Fase 0 tercapai (user konfirmasi yakin menjawab soal 1-3 tanpa petunjuk dan bisa menjelaskan alasannya). Lanjut ke Fase 1, Minggu 4.
 - 2026-11-09: Minggu 4 Hari 1 selesai (lexical scope: pencarian nama ditentukan posisi fungsi ditulis, bukan pemanggilnya; lexical vs dynamic scope; fungsi yang dikirim ke tempat lain tetap memakai scope tempat dia ditulis). Slip: alasan cek paham 2 materi 1 dijawab "bukan lagi closure" padahal yang berubah posisi penulisan fungsi, nilai `greeting` di Snippet 2 tertukar dengan argumen `name`, output Snippet 3 menulis nama variabel `y` bukan nilainya (2). Snippet 1 dan 2 benar, Snippet 3 akhirnya benar. Catatan: kata "ketemu"/"nyari" di penjelasan materi sempat membingungkan, ganti ke "mencari deklarasi nama" dan "pencarian berhenti".
 - 2026-11-09: Minggu 4 Hari 2 selesai (module pattern: closure + objek yang di-return = state privat, IIFE, tiap pemanggilan factory membuat scope baru). Slip: alasan `saldo` tetap hidup awalnya hanya "lexical scope" (belum menyebut method yang memegang referensi), `counterModule.count` awalnya dikira tidak bisa/error padahal `undefined` (variabel vs properti objek), penjelasan alasan awalnya umum. Snippet 3 benar, Snippet 1 dan 2 output benar. Trace Snippet 2 dilewati karena user sudah paham modelnya.
+- 2026-11-10: Minggu 4 Hari 3 selesai (Big-O: pertumbuhan terhadap n bukan detik, kasus terburuk, buang konstanta, O(1)/O(n)/O(n²)/O(log n), kompleksitas ruang; 4 fungsi + Two Sum brute force). Slip: notasi dan format jawaban belum dikenal di awal, alasan ruang O(1) sering "return satu nilai" (padahal yang dihitung memori tambahan seperti `i`, `j`, `mid`), `O(n x 2)` (konstanta belum dibuang), pertanyaan kasus terburuk awalnya dijawab dengan menunjuk baris loop, tebakan sisa rentang binary search salah (5-6, padahal separuh) dan `mid` salah hitung sekali, `fill(0)` di dalam loop tidak dihitung sebagai kerja (Fungsi 4 awalnya O(n)). Two Sum: awalnya menjumlahkan indeks bukan isi array dan `j` mulai dari 1 bukan `i + 1`, akhirnya benar.
+- 2026-11-10: Minggu 4 Hari 4 selesai (bangun `once(fn)` dari nol: closure menyimpan `hasExecuted` dan `lastResult`, hasil panggilan pertama di-cache, argumen apa pun diteruskan lewat rest + spread). Slip: awalnya mengira yang disimpan adalah argumen (padahal keputusan tidak bergantung argumen), logika cek ditaruh di badan `once` (jalan sekali saat `once` dipanggil) bukan di fungsi yang di-return, `once` sempat mengembalikan hasil panggilan bukan fungsi, `fn(...value)` dengan parameter tunggal (error `[Symbol.iterator] is not a function`) lalu `fn(value)` meneruskan array bukan argumen terpisah, `hasExecuted`/`lastResult` dikira milik fungsi anonim padahal milik environment pemanggilan `once` yang direferensikan fungsi anonim.
