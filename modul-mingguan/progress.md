@@ -5,8 +5,8 @@ Terakhir update: 2026-11-10
 ## Status saat ini
 
 - Fase: Fase 1 (minggu 4-10)
-- Minggu: 4
-- Hari: Minggu 4 Hari 4 selesai, lanjut Minggu 4 Hari 5
+- Minggu: 4 selesai, lanjut Minggu 5
+- Hari: Minggu 4 Hari 5 selesai, lanjut Minggu 5 Hari 1
 
 ## Gerbang tercapai
 
@@ -52,3 +52,4 @@ Terakhir update: 2026-11-10
 - 2026-11-09: Minggu 4 Hari 2 selesai (module pattern: closure + objek yang di-return = state privat, IIFE, tiap pemanggilan factory membuat scope baru). Slip: alasan `saldo` tetap hidup awalnya hanya "lexical scope" (belum menyebut method yang memegang referensi), `counterModule.count` awalnya dikira tidak bisa/error padahal `undefined` (variabel vs properti objek), penjelasan alasan awalnya umum. Snippet 3 benar, Snippet 1 dan 2 output benar. Trace Snippet 2 dilewati karena user sudah paham modelnya.
 - 2026-11-10: Minggu 4 Hari 3 selesai (Big-O: pertumbuhan terhadap n bukan detik, kasus terburuk, buang konstanta, O(1)/O(n)/O(n²)/O(log n), kompleksitas ruang; 4 fungsi + Two Sum brute force). Slip: notasi dan format jawaban belum dikenal di awal, alasan ruang O(1) sering "return satu nilai" (padahal yang dihitung memori tambahan seperti `i`, `j`, `mid`), `O(n x 2)` (konstanta belum dibuang), pertanyaan kasus terburuk awalnya dijawab dengan menunjuk baris loop, tebakan sisa rentang binary search salah (5-6, padahal separuh) dan `mid` salah hitung sekali, `fill(0)` di dalam loop tidak dihitung sebagai kerja (Fungsi 4 awalnya O(n)). Two Sum: awalnya menjumlahkan indeks bukan isi array dan `j` mulai dari 1 bukan `i + 1`, akhirnya benar.
 - 2026-11-10: Minggu 4 Hari 4 selesai (bangun `once(fn)` dari nol: closure menyimpan `hasExecuted` dan `lastResult`, hasil panggilan pertama di-cache, argumen apa pun diteruskan lewat rest + spread). Slip: awalnya mengira yang disimpan adalah argumen (padahal keputusan tidak bergantung argumen), logika cek ditaruh di badan `once` (jalan sekali saat `once` dipanggil) bukan di fungsi yang di-return, `once` sempat mengembalikan hasil panggilan bukan fungsi, `fn(...value)` dengan parameter tunggal (error `[Symbol.iterator] is not a function`) lalu `fn(value)` meneruskan array bukan argumen terpisah, `hasExecuted`/`lastResult` dikira milik fungsi anonim padahal milik environment pemanggilan `once` yang direferensikan fungsi anonim.
+- 2026-11-10: Minggu 4 Hari 5 selesai (array methods: mutating mengubah array asli dan return value-nya beda-beda, non-mutating mengembalikan array baru; 3 snippet + LeetCode Remove Duplicates from Sorted Array). Slip: Snippet 1 awalnya bilang `original` tidak berubah padahal outputnya sudah konsisten dengan `sort` mutating (jawaban kontradiktif, akhirnya benar). LeetCode: sempat mengira perlu method array khusus untuk pasangan indeks, lalu pengarahan lewat `splice` sambil loop terlalu melenceng dan membingungkan, di-reset ke konsep two pointers (indeks baca dan indeks tulis). Kode akhir user benar. Catatan mengajar: untuk soal in-place, jangan menggiring ke `splice`/hapus saat loop, langsung jelaskan arti soal (k posisi pertama) dan beri nama konsep. Minggu 4 selesai.
